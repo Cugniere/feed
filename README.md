@@ -2,6 +2,8 @@
 
 A minimalistic, zero-dependency RSS reader for YouTube that lists the latest videos from your favorite channels.
 
+![Feed screenshot](../assets/feed-screenshot.webp?raw=true)
+
 ## Features
 
 - No external dependencies - uses only Node.js built-in modules
