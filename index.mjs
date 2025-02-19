@@ -63,7 +63,7 @@ function generateHTML(videos) {
                   --card-background: #ffffff;
                   --card-background-hover: #fdfdfd;
                   --card-channel-color: #606060;
-                  --card-date-color: #909090;
+                  --card-date-color: #595959;
                 }
                 @media (prefers-color-scheme: dark) {
                   :root {
@@ -71,6 +71,8 @@ function generateHTML(videos) {
                     --text-color: #fff;
                     --card-background: #1d2735;
                     --card-background-hover: #2e3846;
+                    --card-channel-color: #cccccc;
+                    --card-date-color: #a3a3a3;
                   }
                 }
                 body {
