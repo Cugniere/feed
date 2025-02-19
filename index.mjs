@@ -56,25 +56,43 @@ function generateHTML(videos) {
             <title>Feed</title>
             <link rel="icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIABGAAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAABAAAAAQgGAAAAHxXEiQAAAA1JREFUeJxj+J/j/g8ABtECsftsr6UAAAAASUVORK5CYII=" />
             <style>
+                :root {
+                  color-scheme: light dark;
+                  --background-color: #f1f1f1;
+                  --text-color: #000;
+                  --card-background: #ffffff;
+                  --card-background-hover: #fdfdfd;
+                  --card-channel-color: #606060;
+                  --card-date-color: #909090;
+                }
+                @media (prefers-color-scheme: dark) {
+                  :root {
+                    --background-color: #111827;
+                    --text-color: #fff;
+                    --card-background: #1d2735;
+                    --card-background-hover: #2e3846;
+                  }
+                }
                 body {
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                     max-width: 1200px;
                     margin: 0 auto;
                     padding: 20px;
-                    background: #f1f1f1;
+                    background: var(--background-color);
+                    color: var(--text-color);
                 }
                 .videos {
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: 20px;
+                    gap: 30px;
                 }
                 .video-card {
-                    background: white;
+                    background: var(--card-background);
                     border-radius: 2px;
                     overflow: hidden;
                 }
                 .video-card:hover {
-                  background: #fdfdfd;
+                  background: var(--card-background-hover);
                 }
                 .thumbnail {
                     width: 100%;
@@ -90,17 +108,15 @@ function generateHTML(videos) {
                     line-height: 1.4;
                 }
                 .channel-name {
-                    color: #606060;
+                    color: var(--card-channel-color);
                     font-size: 14px;
                     margin: 0 0 5px 0;
                 }
                 .video-date {
-                    color: #909090;
+                    color: var(--card-date-color);
                     font-size: 12px;
                 }
-                a { text-decoration: none;
-                    color: inherit;
-                }
+                a { text-decoration: none; color: inherit; }
             </style>
         </head>
         <body>
