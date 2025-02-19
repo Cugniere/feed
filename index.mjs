@@ -23,7 +23,7 @@ function parseVideos(xml) {
     const link = entry.match(/<link rel="alternate" href="(.*?)"/)?.[1] || ""
     const published = entry.match(/<published>(.*?)<\/published>/)?.[1] || ""
     const thumbnail = entry.match(/<media:thumbnail url="(.*?)"/)?.[1] || ""
-    const channelName = entry.match(/<author><name>(.*?)<\/name>/)?.[1] || ""
+    const channelName = entry.match(/<author>\s*<name>(.*?)<\/name>/)?.[1] || ""
 
     videos.push({
       title: decodeHTMLEntities(title),
@@ -144,6 +144,7 @@ function generateHTML(videos) {
 
 const channels = [
   // add channels id here, ex "UCjFqcJQXGZ6T6sxyFB-5i6A"
+  "UCjFqcJQXGZ6T6sxyFB-5i6A"
 ]
 
 const server = http.createServer(async (req, res) => {
